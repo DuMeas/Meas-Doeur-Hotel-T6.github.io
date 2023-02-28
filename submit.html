@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Meas Doeur Hotel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- <link rel="stylesheet" href="/Css/Meas Doeur Hotel/submit.css"> -->
+  <!-- <link rel="stylesheet" href="/Hotel Booking/Style(T2).css"> -->
+
+  <!-- <script src="/Hotel Booking/js/jquery.countdown.js"></script>
+  <script src="/Hotel Booking/js/jquery.countdown.min.js"></script>
+
+  <script src="js/jquery.countdown.js" charset="utf-8"></script>
+  <script src="js/jquery.countdown.min.js" charset="utf-8"></script> -->
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+
+</head>
+<body>
+
+    <section class="book">
+        <div class="container flex_space">
+          <div class="text">
+            <h1> <span>Book</span>Your Rooms</h1>
+          </div>
+          <div class="form">
+            <form class="grid">
+              <input type="date" placeholder="Araival Date">
+              <input type="date" placeholder="Departure Date">
+              <input type="number" placeholder="Room">
+              <input type="number" placeholder="Poeple">
+              
+              <!-- <input type="submit" value="CHECK AVAILABILITY"> -->
+            </form>
+            <div class="container">
+                <button type="submit" class="btn" onclick="openPopup()">Submit</button>
+                <div class="popup" id="popup">
+                    <img src="/image/tick.jpg" alt="" width="80px">
+                    <h2>Thank You!</h2>
+                <p>Your details has been successfully submitted.Thanks!</p>
+                    <button type="button" onclick="closePopup()">OK</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    <label><audio> </audio></label> 
+      
+      </section>
+
+    <!-- <div class="container">
+        <button type="submit" class="btn" onclick="openPopup()">Submit</button>
+        <div class="popup" id="popup">
+            <img src="/image/tick.jpg" alt="" width="80px">
+            <h2>Thank You!</h2>
+        <p>Your details has been successfully submitted.Thanks!</p>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+    </div> -->
+    
+    <script>
+        let popup = document.getElementById("popup");
+
+        function openPopup(){
+            popup.classList.add("open-popup");
+        }
+
+        function closePopup(){
+            popup.classList.remove("open-popup");
+        }
+    </script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+  /* padding: 0; */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.container{ 
+    width: 100%; 
+    height: 100vh; 
+    background-image: url(/image/background-color.jpg); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+} 
+/* ========book============= */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 20px;
+    margin-top: 30%;
+    left: 50%;
+}
+.div {
+    display: block;
+}
+
+input {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.book {
+    padding:40px 0;
+    background: #282834;
+    /* color: #fff; */
+}
+
+h1 {
+    font-family: serif;
+}
+
+.book h1 {
+    font-size: 28px;
+    margin-top: 30%;
+    left: 50%;
+}
+
+.book h1 span {
+    color: #7fc142;
+    left: 0;
+    margin-top: 30%;
+}
+
+.book input {
+    padding: 20px;
+}
+
+/* .book input:nth-last-child(1){
+    background: #7fc142;
+    color: #fff;
+} */
+
+.btn { 
+    padding: 10px 60px; 
+    background: #91ff00;
+    color: #000000;
+    border: 0; 
+    outline: none; 
+    cursor: pointer; 
+    font-size: 22px; 
+    font-weight: 500;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+
+}
+.popup{
+    width: 300px; 
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: -50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50, -50%) scale(1);
+}
+
+.popup img {
+    width: 100px;
+    margin-top: 3%;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 500;
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #00fd00;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* .book input:nth-last-child(1){
+    background: #7bff00;
+    color: #fff;
+} */
+
+    </style>
+
+
+</body>
+</html>
